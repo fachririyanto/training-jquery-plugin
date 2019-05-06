@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple jQuery Plugin</title>
+    </head>
+
+    <body>
+        <div class="hello">
+            Hello world!!
+        </div>
+        <div class="hello">
+            Contoh paragraph lainnya.
+        </div>
+
+        <!-- load jQuery from Google -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <!-- load custom plugin we already created -->
+        <script src="js/plugin.js"></script>
+    
+        <!-- main script -->
+        <script type="text/javascript">
+            (function($) {
+                /**
+                 * When document is ready.
+                 */
+                $(document).ready(function() {
+                    // init plugin changeThemeToRed
+                    $('.hello').changeThemeToRed();
+                });
+            })(jQuery);
+        </script>
+    </body>
+</html>

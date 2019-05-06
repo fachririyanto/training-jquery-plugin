@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Complex jQuery Plugin</title>
+    </head>
+
+    <body>
+        <div class="hello-red">
+            Hello world!!
+        </div>
+        <div class="hello-green">
+            Hello world!!
+        </div>
+        <p>
+            <button class="button-destroy">Destroy</button>
+        </p>
+
+        <!-- load jQuery from Google -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <!-- load custom plugin we already created -->
+        <script src="js/plugin.js"></script>
+    
+        <!-- main script -->
+        <script type="text/javascript">
+            (function($) {
+                $(document).ready(function() {
+                    $('.hello-red').changeTheme({
+                        backgroundColor: 'red',
+                        textColor: '#ffffff'
+                    });
+                    $('.hello-green').changeTheme({
+                        backgroundColor: 'green',
+                        textColor: 'blue'
+                    });
+
+                    $('.button-destroy').click(function(event) {
+                        event.preventDefault();
+                        $('.hello-red').changeTheme('destroy');
+                        $('.hello-green').changeTheme('destroy');
+                    });
+                });
+            })(jQuery);
+        </script>
+    </body>
+</html>
